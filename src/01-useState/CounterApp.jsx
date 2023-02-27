@@ -2,12 +2,38 @@ import React, { useState } from 'react'
 
 export const CounterApp = () => {
 
-    const [counter, setCounter] = useState(10)
+    const [state, setCounter] = useState({
+        counter1: 10,
+        counter2: 20,
+        counter3: 30,
+    });
+
+    const { counter1, counter2, counter3 } = state;
     return (
         <>
-            <h1>Counter:{counter}</h1>
+            <h1>Counter 1: {counter1}</h1>
+            <h1>Counter 2: {counter2}</h1>
+            <h1>Counter 3: {counter3}</h1>
             <hr />
-            <button onClick={() => setCounter(counter + 1)}>+1</button>
+            <button
+                className='btn btn-primary btn-large btn-justified'
+                onClick={() => setCounter({
+                    ...state,
+                    counter1: counter1 + 1
+
+                })}>+1</button>
+            <button onClick={() => setCounter({
+                counter1: 0,
+                counter2: 0,
+                counter3: 0
+            })} className='btn btn-dark'>Reset</button>
+            <button
+                className='btn btn-secondary btn-large btn-justified'
+                onClick={() => setCounter({
+                    ...state,
+                    counter1: counter1 - 1
+                })}>-1</button>
+
         </>
     )
 }
