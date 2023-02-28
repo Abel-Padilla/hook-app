@@ -2,20 +2,23 @@ import React from 'react'
 import { useFetch, useCounter } from '../hooks'
 import { LoadingQuote, Quote } from './index';
 
-export const MultipleCustomHooks = () => {
+export const PokeList = () => {
     const { counter, increment } = useCounter(1);
-    const { data, isLoading, hasError } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${counter}`);
-    const { author, quote } = !!data && data[0];
+    const { data, isLoading, hasError } = useFetch(`https://pokeapi.co/api/v2/pokemon/${counter}`);
+    const { name, sprites } = !!data && data;
+  
 
     const usefetch = useFetch()
     return (
         <>
-            <h1>Breaking bad Quotes</h1>
+            <h1>Pokemon!</h1>
             <hr />
             {
-                isLoading 
-                ? <LoadingQuote /> 
-                : <Quote author={author} quote={quote} />
+                <div className='card'>
+                    <div className='card-title'>
+                        <h3>{name}</h3>
+                    </div>
+                </div>
             }
             <button
                 disabled={isLoading}

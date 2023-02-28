@@ -1,8 +1,8 @@
 import React from 'react'
 import { useFetch, useCounter } from '../hooks'
-import { LoadingQuote, Quote } from './index';
+import { LoadingQuote, Quote } from '../03-examples/index';
 
-export const MultipleCustomHooks = () => {
+export const Layout = () => {
     const { counter, increment } = useCounter(1);
     const { data, isLoading, hasError } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${counter}`);
     const { author, quote } = !!data && data[0];
@@ -13,9 +13,9 @@ export const MultipleCustomHooks = () => {
             <h1>Breaking bad Quotes</h1>
             <hr />
             {
-                isLoading 
-                ? <LoadingQuote /> 
-                : <Quote author={author} quote={quote} />
+                isLoading
+                    ? <LoadingQuote />
+                    : <Quote author={author} quote={quote} />
             }
             <button
                 disabled={isLoading}
