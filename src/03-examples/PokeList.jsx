@@ -1,29 +1,39 @@
 import React from 'react'
 import { useFetch, useCounter } from '../hooks'
 import { LoadingQuote, Quote } from './index';
+import { PokeCard } from './PokeCard';
+import { PokeTypes } from './PokeTypes';
 
 export const PokeList = () => {
-    const { counter, increment } = useCounter(1);
-    const { data, isLoading, hasError } = useFetch(`https://pokeapi.co/api/v2/pokemon/${counter}`);
-    const { name, sprites } = !!data && data;
-  
 
-    const usefetch = useFetch()
+    const { counter, increment, decrement, reset } = useCounter(1);
+    const { data, isLoading, hasError } = useFetch(`https://pokeapi.co/api/v2/pokemon/${counter}`);
+    
     return (
         <>
             <h1>Pokemon!</h1>
-            <hr />
             {
-                <div className='card'>
-                    <div className='card-title'>
-                        <h3>{name}</h3>
-                    </div>
-                </div>
+                <PokeCard data={data}></PokeCard>
             }
-            <button
-                disabled={isLoading}
-                className='btn btn-primary'
-                onClick={() => increment(1)}>Next quote</button>
+            <div className='d-grid gap-2 d-md-flex justify-content-md-end mt-5'>
+                <button
+                    disabled={isLoading}
+                    className='btn btn-secondary'
+                    onClick={() => decrement(1)}>Previous Pokemon
+                </button>
+                <button
+                    disabled={isLoading}
+                    className='btn btn-outline-primary'
+                    onClick={reset}>Reset
+                </button>
+                <button
+                    disabled={isLoading}
+                    className='btn btn-primary'
+                    onClick={() => increment(1)}>Next pokemon
+                </button>
+
+            </div>
+
 
         </>
     )
