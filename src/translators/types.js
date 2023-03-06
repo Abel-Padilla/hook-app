@@ -1,4 +1,4 @@
-export const getInfoType = ({ type }) => {
+export const getInfoType = (type) => {
     const types = [
         {
             name: 'normal',
@@ -101,5 +101,5 @@ export const getInfoType = ({ type }) => {
             'background-color': 'gray'
         }
     ];
-    return types.filter(n=>n.name == type)
+    return types.filter(n => n.name == type)[0]
 }
