@@ -3,6 +3,7 @@ import { PokeTypes } from './PokeTypes';
 export const PokeCard = ({ data }) => {
     if (!data) return (<></>)
     const { name, sprites, types } = !!data && data;
+    if (!name) return (<><h4>Something wrong 😐, pls retry</h4></>)
     const [imageType, setimageType] = useState('front')
     const image = sprites?.versions['generation-v']['black-white'].animated[`${imageType}_default`];
 

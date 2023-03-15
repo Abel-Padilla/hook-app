@@ -3,102 +3,102 @@ export const getInfoType = (type) => {
         {
             name: 'normal',
             color: 'withe',
-            'background-color': 'orange'
+            'backgroundColor': 'orange'
         },
         {
             name: 'fighting',
             color: 'withe',
-            'background-color': 'red'
+            'backgroundColor': 'red'
         },
         {
             name: 'flying',
             color: 'withe',
-            'background-color': 'cyan'
+            'backgroundColor': 'cyan'
         },
         {
             name: 'poison',
             color: 'withe',
-            'background-color': 'purple'
+            'backgroundColor': 'purple'
         },
         {
             name: 'ground',
             color: 'black',
-            'background-color': 'brown'
+            'backgroundColor': 'brown'
         },
         {
             name: 'rock',
             color: 'black',
-            'background-color': 'gray'
+            'backgroundColor': 'gray'
         },
         {
             name: 'bug',
             color: 'withe',
-            'background-color': 'rgeen'
+            'backgroundColor': 'rgeen'
         },
         {
             name: 'ghost',
             color: 'purple',
-            'background-color': 'black'
+            'backgroundColor': 'black'
         },
         {
             name: 'steel',
             color: 'withe',
-            'background-color': 'gray'
+            'backgroundColor': 'gray'
         },
         {
             name: 'fire',
             color: 'red',
-            'background-color': 'orange'
+            'backgroundColor': 'orange'
         },
         {
             name: 'water',
             color: 'withe',
-            'background-color': 'blue'
+            'backgroundColor': 'blue'
         },
         {
             name: 'grass',
             color: 'black',
-            'background-color': 'green'
+            'backgroundColor': 'green'
         },
         {
             name: 'electric',
             color: 'withe',
-            'background-color': 'yellow'
+            'backgroundColor': 'yellow'
         },
         {
             name: 'psychic',
             color: 'purple',
-            'background-color': 'withe'
+            'backgroundColor': 'withe'
         },
         {
             name: 'ice',
             color: 'cyan',
-            'background-color': 'withe'
+            'backgroundColor': 'withe'
         },
         {
             name: 'dragon',
             color: 'green',
-            'background-color': 'red'
+            'backgroundColor': 'red'
         },
         {
             name: 'dark',
             color: 'withe',
-            'background-color': 'black'
+            'backgroundColor': 'black'
         },
         {
             name: 'fairy',
             color: 'pink',
-            'background-color': 'withe'
+            'backgroundColor': 'withe'
         },
         {
             name: 'unknown',
             color: 'black',
-            'background-color': 'withe'
+            'backgroundColor': 'withe'
         },
         {
             name: 'shadow',
             color: 'brown',
-            'background-color': 'gray'
+            'backgroundColor': 'gray'
         }
     ];
     return types.filter(n => n.name == type)[0]

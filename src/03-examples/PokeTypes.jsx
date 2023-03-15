@@ -11,9 +11,8 @@ export const PokeTypes = ({ types }) => {
         }
             {types.map((type) => {
                 const styleType = getInfoType(type.type.name);
-                console.log({ styleType })
                 return (
-                    <h5><span style={styleType} className={`badge`}>{type.type.name}</span></h5>
+                    <h5 key={type.type.name}><span style={styleType} className={`badge`}>{type.type.name}</span></h5>
                 )
             })}
         </div>

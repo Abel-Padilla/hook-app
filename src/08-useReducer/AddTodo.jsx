@@ -18,12 +18,12 @@ export const AddTodo = ({ onNewTodo }) => {
         onNewTodo(newTodo);
         onResetForm();
     }
-    
+
     return (
         <form onSubmit={(event) => onFormSubmit(event)}>
             <input
                 name="description"
-                onChange={onInputChange}
+                onChange={(ev) => { onInputChange(ev) }}
                 placeholder='Que hay que hacer?'
                 type="text"
                 value={description}

@@ -1,19 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFetch, useCounter } from '../hooks'
 import { LoadingQuote, Quote } from './index';
+import { LoadingCard } from './LoadingCard';
 import { PokeCard } from './PokeCard';
 import { PokeTypes } from './PokeTypes';
+import { SearchBar } from './SearchBar';
 
 export const PokeList = () => {
 
     const { counter, increment, decrement, reset } = useCounter(1);
-    const { data, isLoading, hasError } = useFetch(`https://pokeapi.co/api/v2/pokemon/${counter}`);
-    
+    const [textSearch, setTextSearch] = useState('');
+    const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/1`);
+    const { data, isLoading, hasError } = useFetch(url);
+    const search = (event) => {
+        setUrl(`https://pokeapi.co/api/v2/pokemon/${event}`)
+    }
+
+    useEffect(() => {
+        setUrl(`https://pokeapi.co/api/v2/pokemon/${counter}`)
+        return () => {
+
+        }
+    }, [counter])
+
+
+
+
     return (
         <>
-            <h1>Pokemon!</h1>
+            <div className='row mt-5 mb-5 '>
+                <div className="col-md-6">
+                    <h1>Pokemon!</h1>
+                </div>
+                <div className="col-md-6">
+                    <SearchBar search={search}></SearchBar>
+                </div>
+
+            </div>
             {
-                <PokeCard data={data}></PokeCard>
+                isLoading ? <LoadingCard></LoadingCard>
+                    :
+                    <PokeCard data={data}></PokeCard>
             }
             <div className='d-grid gap-2 d-md-flex justify-content-md-end mt-5'>
                 <button

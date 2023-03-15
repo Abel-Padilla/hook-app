@@ -8,7 +8,7 @@ export const HomePage = () => {
             <h1>Bienvenido {user?.name.split(" ")[0]}</h1>
             <hr></hr>
             <h3>Esta es tu información:</h3>
-            <pre>
+            <pre aria-label='pre'>
                 {JSON.stringify(user, null, 3)}
             </pre>
         </>

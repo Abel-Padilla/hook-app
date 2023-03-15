@@ -9,7 +9,7 @@ export const Navbar = () => {
             </button>
             <div className="navbar-collapse collapse show" id="navbarColor02" >
                 <ul className="navbar-nav me-auto">
-                <li className="nav-item">
+                    <li className="nav-item">
                         <NavLink
                             className={
                                 ({ isActive }) => {
@@ -42,6 +42,30 @@ export const Navbar = () => {
                             }
                             to="login">
                             Login
+                        </NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink
+                            className={
+                                ({ isActive }) => {
+                                    return (`nav-link ${isActive ? 'active' : ''}`)
+                                }
+                            }
+                            to="todoapp">
+                            My ToDo
+                        </NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink
+                            className={
+                                ({ isActive }) => {
+                                    return (`nav-link ${isActive ? 'active' : ''}`)
+                                }
+                            }
+                            to="pokeapp">
+                            Pokedex
                         </NavLink>
                     </li>
 
